@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "roboto", "shrikhand";
+  src: url("Roboto-Regular-webfont.eot");
+  src: url("Roboto-Regular-webfont.woff") format("woff");
+  src: url("Roboto-Regular-webfont.ttf") format("truetype");
+  src: url("Roboto-Regular-webfont.svg") format("svg");
+  src: url("Shrikhand-Regular.otf") format("otf");
+}
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "roboto", sans-serif;
+  color: #181818;
+  margin: 0;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3Nhc3MvbWFpbi5zY3NzIiwiLi4vc3R5bGUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0NBQUE7RUFDQSxzQ0FBQTtFQUNBLHNEQUFBO0VBQ0EseURBQUE7RUFDQSxvREFBQTtFQUNBLCtDQUFBO0FDQ0o7QURHQTtFQUNJLDhCQUFBO1VBQUEsc0JBQUE7QUNESjs7QURJQTtFQUVJLGVBQUE7RUFDQSxrQkFBQTtBQ0ZKOztBRElBO0VBQ0ksaUNBQUE7RUFDQSxjQUFBO0VBQ0EsU0FBQTtBQ0RKIiwiZmlsZSI6InN0eWxlLmNzcyJ9 */
