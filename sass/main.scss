@@ -35,11 +35,53 @@ $tertiary-color:#99E2D0;
 $primary-font: black;
 $secondary-font: white;
 $tertiary-font: #008766;
+$icon-font: #8a8989;
 
 $footer-bkg-color: #353535;
 $primary-bkg-color:#eaeaea;
 $secondary-bkg-color:#f6f6f6;
+$tertiary-bkg-color: white;
 $shadow-color: #cfcfcf;
+
+
+@mixin icons ($font-weight, $content, $font-size){
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free"; font-weight: $font-weight; content: $content;
+  position: absolute;  
+  font-size: $font-size;
+}
+
+@mixin btn-mini {
+  color: $secondary-font;
+    background-color: $primary-color;
+    border-radius: 50px;
+    width: 35px;
+    height:35px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    margin-left: -24%;
+    margin-top: 5%;
+}
+
+@mixin btn-how {
+  width: 320px;
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: $primary-bkg-color;
+  border-radius: 20px;
+  filter: drop-shadow(3px 4px 2px $shadow-color);  
+  font-size: 18px;
+  padding-left: 20px;
+  margin: 20px 0;
+  position: relative;
+}
 
 /*header homepage*/
 .homepage-header {
@@ -81,15 +123,8 @@ $shadow-color: #cfcfcf;
   position: relative;
   text-align: center;
   &::before{
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f3c5";
+    @include icons(900, "\f3c5", 22px);
     width:10%;
-    font-size: 22px;
-    position: absolute;
     top: 18px;
     right:90%;
   }
@@ -142,11 +177,17 @@ height: 300px;
   background: linear-gradient(175deg, $secondary-color, $primary-color);
   border-radius: 50px;
   filter: drop-shadow(3px 4px 2px $shadow-color);
+  transition: all 400ms ease-in-out;
   &__text {
   font-size: 16px;
-  color: white;
+  color: $secondary-font;
   align-self: center;
   letter-spacing: 1px;
+  }
+  &:hover{
+    filter: opacity(80%);
+    filter: drop-shadow(5px 6px 2px $shadow-color);
+    transform: scale(1.15);
   }
 } 
 
@@ -164,137 +205,59 @@ height: 300px;
 }
 
 .btn-phone {
-  width: 320px;
-  height: 70px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background: $primary-bkg-color;
-  border-radius: 20px;
-  filter: drop-shadow(3px 4px 2px $shadow-color);  
-  font-size: 18px;
-  padding-left: 20px;
-  margin: 20px 0;
-  position: relative;
+  @include btn-how;
   &::before{
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f3cd";
-    color: rgb(138, 137, 137);
-    font-size: 25px;
-    position: absolute;
+    @include icons(900, "\f3cd", 25px);
+    color: $icon-font;
     left: 15%;
   }
   &:hover{
-    background:#e4d5f6;
+    background-color: lighten($primary-color, 30%);
+    filter: drop-shadow(5px 6px 2px $shadow-color);
   }
   &:hover::before{
     color:$primary-color;
   }
   &__mini{
-    color: $secondary-font;
-    background-color: $primary-color;
-    border-radius: 50px;
-    width: 35px;
-    height:35px;
-    display: flex;
-    justify-content:center;
-    align-items:center;
-    margin-left: -24%;
-    margin-top: 5%; 
+    @include btn-mini;
   } 
 }
 
 .btn-list {
-  width: 320px;
-  height: 70px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background: $primary-bkg-color;
-  border-radius: 20px;
-  filter: drop-shadow(3px 4px 2px $shadow-color);  
-  font-size: 18px;
-  padding-left: 20px;
-  margin: 20px 0;
-  position: relative;
+  @include btn-how;
   &::before{
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f0ca";
-    color: rgb(138, 137, 137);
-    font-size: 22px;
-    position: absolute;
+    @include icons(900 ,"\f0ca" , 22px);
+    color: $icon-font;
     left: 15%;
   }
   &:hover{
-    background:#e4d5f6;
+    background-color: lighten($primary-color, 30%);
+    filter: drop-shadow(5px 6px 2px $shadow-color);
   }
   &:hover::before{
     color:$primary-color;
   }
   &__mini{
-    color: $secondary-font;
-    background-color: $primary-color;
-    border-radius: 50px;
-    width: 35px;
-    height:35px;
-    display: flex;
-    justify-content:center;
-    align-items:center;
-    margin-left: -24%;
-    margin-top: 5%; 
+    @include btn-mini;
   } 
 } 
 
 .btn-shop {
-  width: 320px;
-  height: 70px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background: $primary-bkg-color;
-  border-radius: 20px;
-  filter: drop-shadow(3px 4px 2px $shadow-color);  
-  font-size: 18px;
-  padding-left: 20px;
-  margin: 20px 0;
-  position: relative;
+  @include btn-how;
   &::before{
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f54e";
-    color: rgb(138, 137, 137);
-    font-size: 22px;
-    position: absolute;
+    @include icons(900, "\f54e", 22px);
+    color: $icon-font;
     left: 15%;
   }
   &:hover{
-    background:#e4d5f6;
+    background-color: lighten($primary-color, 30%);
+    filter: drop-shadow(5px 6px 2px $shadow-color);
   }
   &:hover::before{
     color:$primary-color;
   }
   &__mini{
-    color: $secondary-font;
-    background-color: $primary-color;
-    border-radius: 50px;
-    width: 35px;
-    height:35px;
-    display: flex;
-    justify-content:center;
-    align-items:center;
-    margin-left: -24%;
-    margin-top: 5%; 
+    @include btn-mini;
   } 
 } 
  
@@ -322,15 +285,15 @@ height: 300px;
   width: 100%;
 }
 .card {
-  background-color: white;
+  background-color: $tertiary-bkg-color;
   border-radius : 20px;
   width: 90%;
   height : 250px;
   margin: 5%;
-  color: black;
+  color: $primary-font;
   position: relative;
   &:visited{
-    color: black;
+    color: $primary-font;
   }
 }
 
@@ -355,14 +318,7 @@ height: 300px;
     margin:0;
   }
   &::before {
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    font-family: "Font Awesome 5 Free"; font-weight: 400; content: "\f004";
-    font-size: 25px;
-    position: absolute;
+    @include icons(400,"\f004", 25px);
     right:35px;
     color: inherit;
     background-clip: text;
@@ -371,15 +327,11 @@ height: 300px;
     transform: scale(1);
     transition: all 400ms ease-in-out;
     }
+  &:hover::before{
+    color: lighten($secondary-color, 25%);
+  } 
   &::after{
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f004";
-    font-size: 25px;
-    position: absolute;
+    @include icons(900,"\f004", 25px);    
     right:35px;
     color: transparent;
     background: linear-gradient(175deg, $secondary-color, $primary-color);
@@ -387,11 +339,11 @@ height: 300px;
     -webkit-background-clip: text;
     opacity:0;
     transform: scale(1);
-    transition: all 400ms ease-in-out;
+    transition: all 2500ms ease-in-out;
   }
   &:hover::after{
     opacity:1;
-    transform: scale(1.2);
+    transform: scale(1.2);    
   }  
 }
 
@@ -432,27 +384,11 @@ height: 300px;
     padding: 0 0 0 45px;
     line-height: 1.8;
     &--ustensils::before{
-      display: inline-block;
-      font-style: normal;
-      font-variant: normal;
-      text-rendering: auto;
-      -webkit-font-smoothing: antialiased;
-      font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f2e7";
-      color: $secondary-font;
-      font-size: 16px;
-      position: absolute;
+      @include icons(900, "\f2e7", 16px);
       left: 6%;
     }
     &--hands::before{
-      display: inline-block;
-      font-style: normal;
-      font-variant: normal;
-      text-rendering: auto;
-      -webkit-font-smoothing: antialiased;
-      font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f4c4";
-      color: $secondary-font;
-      font-size: 16px;
-      position: absolute;
+      @include icons(900,"\f4c4", 16px);
       left: 6%;     
     }
   }
