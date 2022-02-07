@@ -55,33 +55,34 @@ $shadow-color: #cfcfcf;
   font-size: $font-size;
 }
 
-@mixin btn-mini {
+@mixin btn-mini ($width:35px, $height:35px, $margin-left:-24%) {
   color: $secondary-font;
     background-color: $primary-color;
     border-radius: 50px;
-    width: 35px;
-    height:35px;
+    width: $width;
+    height:$height;
     display: flex;
     justify-content:center;
     align-items:center;
-    margin-left: -24%;
+    margin-left:$margin-left;
     margin-top: 5%;
 }
 
-@mixin btn-how {
-  width: 320px;
-  height: 70px;
+@mixin btn-how ($width:230px, $height:70px, $font-size:18px, $padding:0 0 0 20px) {
+  width: $width;
+  height: $height;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background: $primary-bkg-color;
   border-radius: 20px;
   filter: drop-shadow(3px 4px 2px $shadow-color);  
-  font-size: 18px;
-  padding-left: 20px;
+  font-size: $font-size;
+  padding:$padding;
   margin: 20px 0;
   position: relative;
 }
+
 
 /*header homepage*/
 .homepage-header {
@@ -197,55 +198,50 @@ height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-content: flex-start;
   align-items: center;
   width: 100%;
   padding: 0;
-  margin: 40px 0 40px 30px;
-  height: 280px;
+  margin: 40px 0 40px 0;
+  height: auto;
+  &__title{
+    width:350px;
+    justify-content: space-around;    
+    }
+  @media screen and (min-width:768px){
+  .block-how {
+     justify-content :center;
+    &__title{ 
+      text-align: center;
+    }
+  } 
+  }
 }
 
-.btn-phone {
-  @include btn-how;
-  &::before{
+.buttons{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  @media screen and (min-width:991px){
+    flex-direction: row;
+    justify-content: space-evenly;
+    column-gap: 30px;
+    margin: 10px;
+  }
+}
+
+.btn {
+  @include btn-how (320px, 70px, 18px, 0 0 0 20px);
+  &--phone::before{
     @include icons(900, "\f3cd", 25px);
     color: $icon-font;
-    left: 15%;
+    left: 15%;    
   }
-  &:hover{
-    background-color: lighten($primary-color, 30%);
-    filter: drop-shadow(5px 6px 2px $shadow-color);
-  }
-  &:hover::before{
-    color:$primary-color;
-  }
-  &__mini{
-    @include btn-mini;
-  } 
-}
-
-.btn-list {
-  @include btn-how;
-  &::before{
+  &--list::before{
     @include icons(900 ,"\f0ca" , 22px);
     color: $icon-font;
     left: 15%;
   }
-  &:hover{
-    background-color: lighten($primary-color, 30%);
-    filter: drop-shadow(5px 6px 2px $shadow-color);
-  }
-  &:hover::before{
-    color:$primary-color;
-  }
-  &__mini{
-    @include btn-mini;
-  } 
-} 
-
-.btn-shop {
-  @include btn-how;
-  &::before{
+  &--shop::before{
     @include icons(900, "\f54e", 22px);
     color: $icon-font;
     left: 15%;
@@ -254,36 +250,75 @@ height: 300px;
     background-color: lighten($primary-color, 30%);
     filter: drop-shadow(5px 6px 2px $shadow-color);
   }
-  &:hover::before{
+  &--phone:hover::before{
+    color:$primary-color;
+  }
+  &--list:hover::before{
+    color:$primary-color;
+  }
+  &--shop:hover::before{
     color:$primary-color;
   }
   &__mini{
     @include btn-mini;
   } 
-} 
+  @media screen and (max-width:991px) and (min-width:768px){
+    @include btn-how(490px, 80px, 25px, 0 20px 0 0);
+    &__mini{
+    @include btn-mini(40px, 40px, -17%);}
+  }
+  @media screen and (min-width:991px){
+    @include btn-how(290px, 70px, 20px, 0);
+    &--phone::before{
+      @include icons(900, "\f3cd", 22px);
+      left: 12%;    
+    }
+    &--list::before{
+      @include icons(900 ,"\f0ca" , 20px);
+      left: 12%;
+    }
+    &--shop::before{
+      @include icons(900, "\f54e", 20px);
+      left: 12%;
+    } 
+    &__mini{
+    @include btn-mini(35px, 35px, -12%);}
+  }
+}
  
 /*restaurants cards*/
 
 .block-restaurant
 {
-  height: 1350px;
+  height: auto;
   background-color:$secondary-bkg-color;
   display: flex;
   flex-direction: column;
   width: 100%;
-  align-items: space-around;
   align-content: space-between;
-  margin: 90px 0 0 0;
+  margin: 50px 0 0 0;
   padding: 40px 0 20px 0;
   &__title{
     margin-left: 5%;
   }
+  @media screen and (min-width:768px){
+     &__title {
+     margin: 0;
+     text-align: center;
+   }
+  }
 }
 
 .block-card{
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
+  @media screen and (min-width:768px){
+      justify-content: space-around;
+      flex-flow: row wrap;
+      
+    }
 }
 .card {
   background-color: $tertiary-bkg-color;
@@ -295,14 +330,14 @@ height: 300px;
   position: relative;
   &:visited {
     color: $primary-font;
-  }
-  &__image {
-    max-height: 170px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    object-fit: cover;   
-    width: 100%;
-  }
+  }    
+  @media screen and (min-width:768px) {
+    width: 45%;
+    margin: 2%;
+  } 
+  @media screen and (min-width:992px) {
+    height: 470px;
+  } 
 }
 
 .card img {
@@ -311,6 +346,10 @@ height: 300px;
   border-top-right-radius: 20px;
   object-fit: cover;   
   width: 100%;
+  overflow: hidden;
+  @media screen and (min-width:992px) {
+    max-height: 370px;
+  } 
 }
 
 .card__display{
@@ -379,8 +418,9 @@ height: 300px;
 .footer{
   color: $secondary-font;
   background-color: $footer-bkg-color;
-  margin:0;
-  height: 200px;
+  margin:aoto;
+  padding-bottom: 30px;
+  height: auto;
   &__title {
     font-family:'shrikhand';
     font-size: 20px;
@@ -391,6 +431,7 @@ height: 300px;
   &__text{
     padding: 0 0 0 40px;
     line-height: 1.8;
+    position: relative;
     &--ustensils::before{
       @include icons(900, "\f2e7", 16px);
       left: 14px;
@@ -406,5 +447,24 @@ height: 300px;
     padding: 0 0 0 14px;
     line-height: 1.8;
   }
+  @media screen and (min-width:768px) {
+    &__title {
+      font-size: 26px;
+      padding: 10px;
+      margin:0;
+      text-align: center;
+    }
+    &__display {
+      display: flex;
+      justify-items: center;
+      justify-content: space-around;  
+      padding: 10px;
+    }
+    &__text {
+      font-size: 18px;
+    }
+    &__text2 {
+      font-size: 18px;
+    }
+  } 
 }
-
