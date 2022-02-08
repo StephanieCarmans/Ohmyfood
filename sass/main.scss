@@ -90,6 +90,9 @@ $shadow-color: #cfcfcf;
   justify-content: center;
   align-items: center;
   padding: 15px 15px;
+  @media screen and (min-width:991px){
+  transform: scale(1.25);
+  }
 }
 
 /*header restaurants---*/
@@ -128,6 +131,13 @@ $shadow-color: #cfcfcf;
     width:10%;
     top: 18px;
     right:90%;
+    @media screen and (min-width:991px){
+      right: 75%;
+      font-size: 24px;
+    }
+  }
+  @media screen and (min-width:991px){
+    width: 300px;
   }
 }
 
@@ -139,6 +149,10 @@ $shadow-color: #cfcfcf;
   position: absolute; 
   top: 20px; 
   right: 5%;
+  @media screen and (min-width:991px){
+    font-size: 20px;
+    right: -10%;
+  }
 }
 
 .background{
@@ -154,6 +168,9 @@ height: 300px;
   font-size: 22px;
   padding-top: 40px;
   margin-top: 0;
+  @media screen and (min-width:991px){
+    font-size: 26px;
+  }
 }
 
 .search-explain{
@@ -163,6 +180,9 @@ height: 300px;
   text-align: center;
   padding-bottom: 25px;
   font-size: 18px;
+  @media screen and (min-width:991px){
+    font-size: 20px;
+  }
 }
 
 .container{
@@ -179,11 +199,18 @@ height: 300px;
   border-radius: 50px;
   filter: drop-shadow(3px 4px 2px $shadow-color);
   transition: all 400ms ease-in-out;
+  @media screen and (min-width:991px){
+    width:300px;
+    height: 70px;
+  }
   &__text {
   font-size: 16px;
   color: $secondary-font;
   align-self: center;
   letter-spacing: 1px;
+  @media screen and (min-width:991px){
+    font-size: 20px;
+  }
   }
   &:hover{
     filter: opacity(80%);
@@ -212,6 +239,7 @@ height: 300px;
      justify-content :center;
     &__title{ 
       text-align: center;
+      font-size: 26px;
     }
   } 
   }
@@ -270,16 +298,16 @@ height: 300px;
   @media screen and (min-width:991px){
     @include btn-how(290px, 70px, 20px, 0);
     &--phone::before{
-      @include icons(900, "\f3cd", 22px);
-      left: 12%;    
+      @include icons(900, "\f3cd", 20px);
+      left: 11%;    
     }
     &--list::before{
-      @include icons(900 ,"\f0ca" , 20px);
-      left: 12%;
+      @include icons(900 ,"\f0ca" , 18px);
+      left: 13%;
     }
     &--shop::before{
-      @include icons(900, "\f54e", 20px);
-      left: 12%;
+      @include icons(900, "\f54e", 18px);
+      left: 11%;
     } 
     &__mini{
     @include btn-mini(35px, 35px, -12%);}
@@ -305,6 +333,7 @@ height: 300px;
      &__title {
      margin: 0;
      text-align: center;
+     font-size: 26px;
    }
   }
 }
@@ -328,9 +357,14 @@ height: 300px;
   margin: 5%;
   color: $primary-font;
   position: relative;
+  filter: drop-shadow(3px 4px 2px $shadow-color);
   &:visited {
     color: $primary-font;
-  }    
+  }  
+  &:hover  {
+  filter: drop-shadow(5px 6px 2px $shadow-color);
+  opacity: 80%;
+  }
   @media screen and (min-width:768px) {
     width: 45%;
     margin: 2%;
@@ -341,14 +375,14 @@ height: 300px;
 }
 
 .card img {
-  max-height: 170px;
+  height: 170px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   object-fit: cover;   
   width: 100%;
   overflow: hidden;
   @media screen and (min-width:992px) {
-    max-height: 370px;
+    height: 370px;
   } 
 }
 
@@ -411,6 +445,11 @@ height: 300px;
   top:15px;
   right:10px;
   color: $tertiary-font;
+  @media screen and (min-width:992px) {
+    height: 45px;
+    width: 150px;
+    font-size: 20px;
+  } 
 } 
 
 /*------------------Footer----------------*/
