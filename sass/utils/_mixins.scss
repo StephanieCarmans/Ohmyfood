@@ -1,0 +1,43 @@
+
+/*mixin icones fontawesome*/
+@mixin icons ($font-weight, $content, $font-size){
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free"; font-weight: $font-weight; content: $content;
+    position: absolute;  
+    font-size: $font-size;
+  }
+  
+  /*mixin mini bouton rond section howto*/
+  @mixin btn-mini ($width:35px, $height:35px, $margin-left:-24%) {
+    color: $secondary-font;
+      background-color: $primary-color;
+      border-radius: 50px;
+      width: $width;
+      height:$height;
+      display: flex;
+      justify-content:center;
+      align-items:center;
+      margin-left:$margin-left;
+      margin-top: 5%;
+  }
+
+  /*mixin grand bouton section howto*/  
+  @mixin btn-how ($width:230px, $height:70px, $font-size:18px, $padding:0 0 0 20px) {
+    width: $width;
+    height: $height;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: $primary-bkg-color;
+    border-radius: 20px;
+    filter: drop-shadow(3px 4px 2px $shadow-color);  
+    font-size: $font-size;
+    padding:$padding;
+    margin: 20px 0;
+    position: relative;
+  }
+  

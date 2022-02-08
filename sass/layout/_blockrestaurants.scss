@@ -1,0 +1,118 @@
+/*restaurants cards*/
+
+.block-restaurant
+{
+  height: auto;
+  background-color:$secondary-bkg-color;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-content: space-between;
+  margin: 50px 0 0 0;
+  padding: 40px 0 20px 0;
+  &__title{
+    margin-left: 5%;
+  }
+  @media screen and (min-width:768px){
+     &__title {
+     margin: 0;
+     text-align: center;
+     font-size: 26px;
+   }
+  }
+}
+
+.block-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  @media screen and (min-width:768px){
+      justify-content: space-around;
+      flex-flow: row wrap;
+      
+    }
+}
+.card {
+  background-color: $tertiary-bkg-color;
+  border-radius : 20px;
+  width: 90%;
+  height : 260px;
+  margin: 5%;
+  color: $primary-font;
+  position: relative;
+  filter: drop-shadow(3px 4px 2px $shadow-color);
+  &:visited {
+    color: $primary-font;
+  }  
+  &:hover  {
+  filter: drop-shadow(5px 6px 2px $shadow-color);
+  opacity: 80%;
+  }
+  @media screen and (min-width:768px) {
+    width: 45%;
+    margin: 2%;
+  } 
+  @media screen and (min-width:992px) {
+    height: 470px;
+  } 
+}
+
+.card img {
+  height: 170px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  object-fit: cover;   
+  width: 100%;
+  overflow: hidden;
+  @media screen and (min-width:992px) {
+    height: 370px;
+  } 
+}
+
+.card__display{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin:5%;
+  &--title{ 
+    margin:0;
+    font-size: 20px;
+  }
+  &--text{ 
+    margin:0;
+  }
+  &::before {
+    @include icons(400,"\f004", 25px);
+    right:35px;
+    color: inherit;
+    background-clip: text;
+    -webkit-background-clip: text;
+    opacity:1;
+    transform: scale(1);
+    transition: all 400ms ease-in-out;
+    }
+  &:hover::before{
+    color: lighten($secondary-color, 25%);
+  } 
+  &::after{
+    @include icons(900,"\f004", 25px);    
+    right:35px;
+    color: transparent;
+    background: linear-gradient(175deg, $secondary-color, $primary-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+    opacity:0;
+    transform: scale(1);
+    transition: all 2500ms ease-in-out;
+  }
+  &:hover::after{
+    opacity:1;
+    transform: scale(1.2);    
+  }  
+}
+
+.card__text{
+  flex-direction: column;
+  justify-content: flex-start;
+}

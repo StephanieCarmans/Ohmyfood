@@ -30,7 +30,7 @@
                 </form>
             </div>
             <div class="background">
-                <h2 class="search-text">Réservez le menu qui<br>vous convient</h2>
+                <h2 class="search-text">Réservez le menu qui<br>convient</h2>
                 <p class="search-explain">Découvrez des restaurants d'exception,<br>sélectionnés par nos soins</p>
                 <div class="container">
                     <div class="btn-explore">
@@ -42,18 +42,18 @@
 
         <!--How to-->
         <section class=" block-how">
-          <h2>Fonctionnement</h2> 
-          <ul>
-              <li class="btn-phone">
-                  <p class="btn-phone__mini">1</p>
+          <h2 class="block-how__title">Fonctionnement</h2> 
+          <ul class="buttons">
+              <li class="btn btn--phone">
+                  <p class="btn__mini">1</p>
                   Choisissez un restaurant
              </li>
-              <li class="btn-list">
-                <p class="btn-list__mini">2</p>
+              <li class=" btn btn--list">
+                <p class="btn__mini">2</p>
                   Composez votre menu
              </li>
-              <li class="btn-shop">
-                <p class="btn-shop__mini">3</p>
+              <li class="btn btn--shop">
+                <p class="btn__mini">3</p>
                   Dégustez au restaurant
              </li>
           </ul>
@@ -61,11 +61,13 @@
         
         <!--Restaurants list-->
         <section class="block-restaurant">
-            <h2 id="Restaurants">Restaurants</h2>
+            <h2 id="Restaurants" class="block-restaurant__title">Restaurants</h2>
             <div class="block-card">
                <div class="card">
                    <a href="./la_palette_du_gout.html"> 
-                        <img src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unspl.jpg" alt="photo restauraurant La Palette du Goût, Ménilmontant"/>
+                       <div class="card__image">
+                            <img src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unspl.jpg" alt="photo restauraurant La Palette du Goût, Ménilmontant"/>
+                        </div>
                         <div class="card__display">
                             <h2 class="card__display--title">La palette du goût</h2>
                             <p class="card__display--text">Ménilmontant</p>
@@ -112,7 +114,7 @@
     <!--footer-->
     <footer class="footer">
         <h1 class="footer__title">ohmyfood</h1>
-        <ul>
+        <ul class="footer__display">
             <li class= "footer__text">
                 <span class= "footer__text--ustensils">
                     <a href="#">Proposer un restaurant</a>

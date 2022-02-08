@@ -1,0 +1,94 @@
+/*----------how to-------------*/
+
+.block-how{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 40px 0 40px 0;
+    height: auto;
+    &__title{
+      width:350px;
+      justify-content: space-around;    
+      }
+    @media screen and (min-width:768px){
+    .block-how {
+       justify-content :center;
+      &__title{ 
+        text-align: center;
+        font-size: 26px;
+      }
+    } 
+    }
+  }
+
+  .buttons{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @media screen and (min-width:991px){
+      flex-direction: row;
+      justify-content: space-evenly;
+      column-gap: 30px;
+      margin: 10px;
+    }
+  }
+  
+  .btn {
+    @include btn-how (320px, 70px, 18px, 0 0 0 20px);
+    &--phone::before{
+      @include icons(900, "\f3cd", 25px);
+      color: $icon-font;
+      left: 15%;    
+    }
+    &--list::before{
+      @include icons(900 ,"\f0ca" , 22px);
+      color: $icon-font;
+      left: 15%;
+    }
+    &--shop::before{
+      @include icons(900, "\f54e", 22px);
+      color: $icon-font;
+      left: 15%;
+    }
+    &:hover{
+      background-color: lighten($primary-color, 30%);
+      filter: drop-shadow(5px 6px 2px $shadow-color);
+    }
+    &--phone:hover::before{
+      color:$primary-color;
+    }
+    &--list:hover::before{
+      color:$primary-color;
+    }
+    &--shop:hover::before{
+      color:$primary-color;
+    }
+    &__mini{
+      @include btn-mini;
+    } 
+    @media screen and (max-width:991px) and (min-width:768px){
+      @include btn-how(490px, 80px, 25px, 0 20px 0 0);
+      &__mini{
+      @include btn-mini(40px, 40px, -17%);}
+    }
+    @media screen and (min-width:991px){
+      @include btn-how(290px, 70px, 20px, 0);
+      &--phone::before{
+        @include icons(900, "\f3cd", 20px);
+        left: 11%;    
+      }
+      &--list::before{
+        @include icons(900 ,"\f0ca" , 18px);
+        left: 13%;
+      }
+      &--shop::before{
+        @include icons(900, "\f54e", 18px);
+        left: 11%;
+      } 
+      &__mini{
+      @include btn-mini(35px, 35px, -12%);}
+    }
+  }

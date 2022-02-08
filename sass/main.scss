@@ -1,360 +1,119 @@
-* {
-  box-sizing: border-box;
-}
-  
-html, body {
- /* max-width: 768px;*/
-  overflow-x: hidden;
-}
-  
-body {
-  font-family: 'robotoregular',sans-serif;
-  margin: 0;
-}
+@import "base/general.scss";
 
-ul {
-  padding :0;
-  margin: 0;
+@import "utils/variables";
+@import "utils/mixins";
 
-}
-li {
-  list-style-type: none;
-  list-style-position: inside;
-}
+@import "layout/headerhomepage";
+@import "layout/searchhomepage";
+@import "layout/howtohomepage";
+@import "layout/blockrestaurants";
+@import "layout/footer";
 
-a { 
- text-decoration:none; 
- color: inherit;
- cursor: pointer;
-} 
+@import "components/buttonnew";
 
-$primary-color: #9356DC;
-$secondary-color: #FF79DA;
-$tertiary-color:#99E2D0;
-
-$primary-font: black;
-$secondary-font: white;
-$tertiary-font: #008766;
-$icon-font: #8a8989;
-
-$footer-bkg-color: #353535;
-$primary-bkg-color:#eaeaea;
-$secondary-bkg-color:#f6f6f6;
-$tertiary-bkg-color: white;
-$shadow-color: #cfcfcf;
-
-
-@mixin icons ($font-weight, $content, $font-size){
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-family: "Font Awesome 5 Free"; font-weight: $font-weight; content: $content;
-  position: absolute;  
-  font-size: $font-size;
-}
-
-@mixin btn-mini ($width:35px, $height:35px, $margin-left:-24%) {
-  color: $secondary-font;
-    background-color: $primary-color;
-    border-radius: 50px;
-    width: $width;
-    height:$height;
-    display: flex;
-    justify-content:center;
-    align-items:center;
-    margin-left:$margin-left;
-    margin-top: 5%;
-}
-
-@mixin btn-how ($width:230px, $height:70px, $font-size:18px, $padding:0 0 0 20px) {
-  width: $width;
-  height: $height;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background: $primary-bkg-color;
-  border-radius: 20px;
-  filter: drop-shadow(3px 4px 2px $shadow-color);  
-  font-size: $font-size;
-  padding:$padding;
-  margin: 20px 0;
-  position: relative;
-}
-
-
-/*header homepage*/
-.homepage-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 15px 15px;
-  @media screen and (min-width:991px){
-  transform: scale(1.25);
-  }
-}
 
 /*header restaurants---*/
 .restaurant-header {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   padding: 15px 20px;
-  img {
-    padding-left:60px;
+  margin: 0 0 5px 0;
+  position: relative;
+  &__arrow {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 30px;
+    top: 25px;
+    }  
+  &__logo {
+    align-self: center;
   }  
  }
 
- .board img {
-   width: 100%;
-   height: 300px;
+ .board {
+   height: 230px;
  }
-
-/*search homepage*/
-.homepage-search {
-  width: 100%;
-  height: 60px;
-  background-color: $primary-bkg-color;
-  box-shadow: inset 0 4px 5px $shadow-color;
-  display: flex;
-  justify-content: center;  
+ .board img{
+    width: 100%;
+    height: 300px;
+    position: relative;
+    top: -10px;
+    margin: 0;
 }
 
-.form {
-  width:200px; 
+
+/*menu cards*/
+.block {
+  height: 1200px;
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: $secondary-bkg-color;
   position: relative;
-  text-align: center;
-  &::before{
-    @include icons(900, "\f3c5", 22px);
-    width:10%;
-    top: 18px;
-    right:90%;
-    @media screen and (min-width:991px){
-      right: 75%;
-      font-size: 24px;
+  &__title {
+    margin:25px 0 0 15px;
+    font-family: shrikhand;
+    font-weight: bold;
+    font-size: 28px;
+  }
+    &::before {
+    @include icons(400,"\f004", 25px);
+    right:35px;
+    top: 35px;
+    color: inherit;
+    background-clip: text;
+    -webkit-background-clip: text;
+    opacity:1;
+    transform: scale(1);
+    transition: all 400ms ease-in-out;
     }
-  }
-  @media screen and (min-width:991px){
-    width: 300px;
-  }
-}
-
-.form input{
-  border: none;
-  background-color: $primary-bkg-color;
-  font-size: 18px;
-  width: 80%;
-  position: absolute; 
-  top: 20px; 
-  right: 5%;
-  @media screen and (min-width:991px){
-    font-size: 20px;
-    right: -10%;
-  }
-}
-
-.background{
-background-color:$secondary-bkg-color;
-height: 300px;
-}
-
-.search-text{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  font-size: 22px;
-  padding-top: 40px;
-  margin-top: 0;
-  @media screen and (min-width:991px){
-    font-size: 26px;
-  }
-}
-
-.search-explain{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  padding-bottom: 25px;
-  font-size: 18px;
-  @media screen and (min-width:991px){
-    font-size: 20px;
-  }
-}
-
-.container{
-  display: flex;
-  justify-content: center;
-}
-
-.btn-explore {
-  width: 240px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  background: linear-gradient(175deg, $secondary-color, $primary-color);
-  border-radius: 50px;
-  filter: drop-shadow(3px 4px 2px $shadow-color);
-  transition: all 400ms ease-in-out;
-  @media screen and (min-width:991px){
-    width:300px;
-    height: 70px;
-  }
-  &__text {
-  font-size: 16px;
-  color: $secondary-font;
-  align-self: center;
-  letter-spacing: 1px;
-  @media screen and (min-width:991px){
-    font-size: 20px;
-  }
-  }
-  &:hover{
-    filter: opacity(80%);
-    filter: drop-shadow(5px 6px 2px $shadow-color);
-    transform: scale(1.15);
-  }
-} 
-
-/*----------how to-------------*/
-
-.block-how{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  padding: 0;
-  margin: 40px 0 40px 0;
-  height: auto;
-  &__title{
-    width:350px;
-    justify-content: space-around;    
-    }
-  @media screen and (min-width:768px){
-  .block-how {
-     justify-content :center;
-    &__title{ 
-      text-align: center;
-      font-size: 26px;
-    }
-  } 
-  }
-}
-
-.buttons{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  @media screen and (min-width:991px){
-    flex-direction: row;
-    justify-content: space-evenly;
-    column-gap: 30px;
-    margin: 10px;
-  }
-}
-
-.btn {
-  @include btn-how (320px, 70px, 18px, 0 0 0 20px);
-  &--phone::before{
-    @include icons(900, "\f3cd", 25px);
-    color: $icon-font;
-    left: 15%;    
-  }
-  &--list::before{
-    @include icons(900 ,"\f0ca" , 22px);
-    color: $icon-font;
-    left: 15%;
-  }
-  &--shop::before{
-    @include icons(900, "\f54e", 22px);
-    color: $icon-font;
-    left: 15%;
-  }
-  &:hover{
-    background-color: lighten($primary-color, 30%);
-    filter: drop-shadow(5px 6px 2px $shadow-color);
-  }
-  &--phone:hover::before{
-    color:$primary-color;
-  }
-  &--list:hover::before{
-    color:$primary-color;
-  }
-  &--shop:hover::before{
-    color:$primary-color;
-  }
-  &__mini{
-    @include btn-mini;
-  } 
-  @media screen and (max-width:991px) and (min-width:768px){
-    @include btn-how(490px, 80px, 25px, 0 20px 0 0);
-    &__mini{
-    @include btn-mini(40px, 40px, -17%);}
-  }
-  @media screen and (min-width:991px){
-    @include btn-how(290px, 70px, 20px, 0);
-    &--phone::before{
-      @include icons(900, "\f3cd", 20px);
-      left: 11%;    
-    }
-    &--list::before{
-      @include icons(900 ,"\f0ca" , 18px);
-      left: 13%;
-    }
-    &--shop::before{
-      @include icons(900, "\f54e", 18px);
-      left: 11%;
-    } 
-    &__mini{
-    @include btn-mini(35px, 35px, -12%);}
-  }
-}
- 
-/*restaurants cards*/
-
-.block-restaurant
-{
-  height: auto;
-  background-color:$secondary-bkg-color;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-content: space-between;
-  margin: 50px 0 0 0;
-  padding: 40px 0 20px 0;
-  &__title{
-    margin-left: 5%;
-  }
-  @media screen and (min-width:768px){
-     &__title {
-     margin: 0;
-     text-align: center;
-     font-size: 26px;
+    &:hover::before{
+    color: lighten($secondary-color, 25%);
+   } 
+    &::after{
+    @include icons(900,"\f004", 25px);    
+    right:35px;
+    top:35px;
+    color: transparent;
+    background: linear-gradient(175deg, $secondary-color, $primary-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+    opacity:0;
+    transform: scale(1);
+    transition: all 2500ms ease-in-out;
    }
-  }
+    &:hover::after{
+    opacity:1;
+    transform: scale(1.2);    
+    } 
+  
 }
-
-.block-card{
+.block-menu{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  @media screen and (min-width:768px){
-      justify-content: space-around;
-      flex-flow: row wrap;
-      
-    }
+  height: 350px;
+  margin: 30px 0;
+  &__title{
+    padding: 15px;
+    margin: 0;
+    font-weight: 400;
+    font-size: 20px;
+  }
+
 }
-.card {
+
+.meal {
   background-color: $tertiary-bkg-color;
   border-radius : 20px;
-  width: 90%;
-  height : 260px;
-  margin: 5%;
+  width: 92%;
+  height : 70px;
+  margin: 4%;
   color: $primary-font;
   position: relative;
   filter: drop-shadow(3px 4px 2px $shadow-color);
@@ -365,145 +124,61 @@ height: 300px;
   filter: drop-shadow(5px 6px 2px $shadow-color);
   opacity: 80%;
   }
-  @media screen and (min-width:768px) {
-    width: 45%;
-    margin: 2%;
-  } 
-  @media screen and (min-width:992px) {
-    height: 470px;
-  } 
-}
-
-.card img {
-  height: 170px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  object-fit: cover;   
-  width: 100%;
-  overflow: hidden;
-  @media screen and (min-width:992px) {
-    height: 370px;
-  } 
-}
-
-.card__display{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin:5%;
-  &--title{ 
-    margin:0;
-    font-size: 20px;
+  &__title {
+    margin: 10px 0 0 10px;
+    font-size: 18px;
+    font-weight: bold;
   }
-  &--text{ 
-    margin:0;
-  }
-  &::before {
-    @include icons(400,"\f004", 25px);
-    right:35px;
-    color: inherit;
-    background-clip: text;
-    -webkit-background-clip: text;
-    opacity:1;
-    transform: scale(1);
-    transition: all 400ms ease-in-out;
+  &__display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left:10px;
+    font-size: 16px;   
+    &--text {
+      white-space:nowrap;
+      margin-top: 6px;
     }
-  &:hover::before{
-    color: lighten($secondary-color, 25%);
+    &--price {
+      font-weight: bold;
+      margin-top: 6px;
+      margin-right: 12px ;
+    }
   } 
-  &::after{
-    @include icons(900,"\f004", 25px);    
-    right:35px;
-    color: transparent;
-    background: linear-gradient(175deg, $secondary-color, $primary-color);
-    background-clip: text;
-    -webkit-background-clip: text;
-    opacity:0;
-    transform: scale(1);
-    transition: all 2500ms ease-in-out;
-  }
-  &:hover::after{
-    opacity:1;
-    transform: scale(1.2);    
-  }  
+
 }
 
-.card__text{
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.btn-new {
-  width: 90px;
-  height: 25px;
-  border-radius: 5px;
+.contain {
+  height :90px;
+  margin : 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: $tertiary-color;
-  position: absolute;
-  top:15px;
-  right:10px;
-  color: $tertiary-font;
-  @media screen and (min-width:992px) {
-    height: 45px;
-    width: 150px;
-    font-size: 20px;
-  } 
+}
+ 
+.btn-explore {
+  width: 240px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(175deg, $secondary-color, $primary-color);
+  border-radius: 50px;
+  filter: drop-shadow(3px 4px 2px $shadow-color);
+  transition: all 400ms ease-in-out;
+  &__text {
+  font-size: 16px;
+  color: $secondary-font;
+  align-self: center;
+  letter-spacing: 1px;
+  }
+  &:hover{
+    filter: opacity(80%);
+    filter: drop-shadow(5px 6px 2px $shadow-color);
+    transform: scale(1.15);
+  }
 } 
 
-/*------------------Footer----------------*/
+ 
 
-.footer{
-  color: $secondary-font;
-  background-color: $footer-bkg-color;
-  margin:aoto;
-  padding-bottom: 30px;
-  height: auto;
-  &__title {
-    font-family:'shrikhand';
-    font-size: 20px;
-    font-weight: lighter;
-    padding: 20px 0 10px 5px;
-    margin:0 0 0 14px;
-  }
-  &__text{
-    padding: 0 0 0 40px;
-    line-height: 1.8;
-    position: relative;
-    &--ustensils::before{
-      @include icons(900, "\f2e7", 16px);
-      left: 14px;
-      padding-right:14px;
-    }
-    &--hands::before{
-      @include icons(900,"\f4c4", 14px);
-      left: 14px;    
-      padding-right: 14px; 
-    }
-  }
-  &__text2{
-    padding: 0 0 0 14px;
-    line-height: 1.8;
-  }
-  @media screen and (min-width:768px) {
-    &__title {
-      font-size: 26px;
-      padding: 10px;
-      margin:0;
-      text-align: center;
-    }
-    &__display {
-      display: flex;
-      justify-items: center;
-      justify-content: space-around;  
-      padding: 10px;
-    }
-    &__text {
-      font-size: 18px;
-    }
-    &__text2 {
-      font-size: 18px;
-    }
-  } 
-}
+
+
