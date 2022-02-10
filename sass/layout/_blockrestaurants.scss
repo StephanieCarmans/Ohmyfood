@@ -1,7 +1,6 @@
 /*restaurants cards*/
 
-.block-restaurant
-{
+.block {
   height: auto;
   background-color:$secondary-bkg-color;
   display: flex;
@@ -18,7 +17,7 @@
      margin: 0;
      text-align: center;
      font-size: 26px;
-   }
+    }
   }
 }
 
@@ -27,6 +26,20 @@
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
+  &--menu{
+    height: 500px;
+    margin-bottom: 25px;
+  }
+  &__title{
+    padding: 15px;
+    margin: 0;
+    font-weight: 400;
+    font-size: 20px;
+    &--menu {
+      font-size: 18px;
+    }
+  }
+  
   @media screen and (min-width:768px){
       justify-content: space-around;
       flex-flow: row wrap;
@@ -36,12 +49,19 @@
 .card {
   background-color: $tertiary-bkg-color;
   border-radius : 20px;
-  width: 90%;
-  height : 260px;
-  margin: 5%;
   color: $primary-font;
   position: relative;
   filter: drop-shadow(3px 4px 2px $shadow-color);
+  &--big{
+    height: 260px;
+    width:90%;
+    margin: 5%;
+  }
+  &--short{
+    height: 72px;
+    width: 94%;
+    margin: 3%;
+  }
   &:visited {
     color: $primary-font;
   }  
@@ -82,6 +102,7 @@
   &--text{ 
     margin:0;
   }
+  /*heart*/
   &::before {
     @include icons(400,"\f004", 25px);
     right:35px;
@@ -110,6 +131,7 @@
     opacity:1;
     transform: scale(1.2);    
   }  
+  /*heart*/
 }
 
 .card__text{

@@ -12,7 +12,7 @@
 @import "components/buttonnew";
 
 
-/*header restaurants---*/
+/*-----header restaurants---*/
 .restaurant-header {
   display: flex;
   flex-direction: row;
@@ -27,12 +27,13 @@
     position: absolute;
     left: 30px;
     top: 25px;
-    }  
+  }  
   &__logo {
     align-self: center;
   }  
  }
 
+ /*--------Banner-----*/
  .board {
    height: 230px;
  }
@@ -45,25 +46,28 @@
 }
 
 
-/*menu cards*/
-.block {
-  height: 1200px;
+/*----block-menu----*/
+.block-menu {
+  height: 1150px;
+  background-color:$secondary-bkg-color;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  margin: 5px 0 0 0;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  background-color: $secondary-bkg-color;
   position: relative;
   &__title {
-    margin:25px 0 0 15px;
+    margin:25px 0 20px 15px;
     font-family: shrikhand;
-    font-weight: bold;
-    font-size: 28px;
+    font-weight: lighter;
+    font-size: 30px;
   }
-    &::before {
+  /*heart*/
+  &::before {
     @include icons(400,"\f004", 25px);
     right:35px;
-    top: 35px;
+    top: 30px;
     color: inherit;
     background-clip: text;
     -webkit-background-clip: text;
@@ -77,7 +81,7 @@
     &::after{
     @include icons(900,"\f004", 25px);    
     right:35px;
-    top:35px;
+    top:30px;
     color: transparent;
     background: linear-gradient(175deg, $secondary-color, $primary-color);
     background-clip: text;
@@ -89,66 +93,41 @@
     &:hover::after{
     opacity:1;
     transform: scale(1.2);    
-    } 
-  
+    }
+    /*heart*/
 }
-.block-menu{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  height: 350px;
-  margin: 30px 0;
-  &__title{
-    padding: 15px;
-    margin: 0;
-    font-weight: 400;
-    font-size: 20px;
-  }
-
-}
-
+ 
+/*----contenu cards menu---*/
 .meal {
-  background-color: $tertiary-bkg-color;
-  border-radius : 20px;
-  width: 92%;
-  height : 70px;
-  margin: 4%;
-  color: $primary-font;
-  position: relative;
-  filter: drop-shadow(3px 4px 2px $shadow-color);
-  &:visited {
-    color: $primary-font;
-  }  
-  &:hover  {
-  filter: drop-shadow(5px 6px 2px $shadow-color);
-  opacity: 80%;
-  }
-  &__title {
-    margin: 10px 0 0 10px;
+    &-title {
+    padding: 15px 0 0 10px;
     font-size: 18px;
     font-weight: bold;
+    margin: 0;
   }
-  &__display {
+  &-display {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-left:10px;
+    padding-left:10px;
     font-size: 16px;   
-    &--text {
+    margin: 0;
+    &__text {
       white-space:nowrap;
-      margin-top: 6px;
-    }
-    &--price {
+      padding-top: 4px;
+      margin: 0;
+      &--bold {
       font-weight: bold;
-      margin-top: 6px;
-      margin-right: 12px ;
+      padding-right: 15px;
     }
+    }
+    
   } 
 
 }
 
-.contain {
+/*-----button Commandez-----*/
+.container-order {
   height :90px;
   margin : 20px;
   display: flex;
@@ -156,20 +135,10 @@
   align-items: center;
 }
  
-.btn-explore {
-  width: 240px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  background: linear-gradient(175deg, $secondary-color, $primary-color);
-  border-radius: 50px;
-  filter: drop-shadow(3px 4px 2px $shadow-color);
-  transition: all 400ms ease-in-out;
+.btn-order {
+ @include btn-gradient ($width: 190px, $height: 50px);
   &__text {
-  font-size: 16px;
-  color: $secondary-font;
-  align-self: center;
-  letter-spacing: 1px;
+  @include btn-gradient__text;
   }
   &:hover{
     filter: opacity(80%);
@@ -179,6 +148,5 @@
 } 
 
  
-
 
 
