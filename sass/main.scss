@@ -10,6 +10,8 @@
 @import "layout/footer";
 
 @import "components/buttonnew";
+@import "components/buttonorder";
+@import "components/buttonexplore";
 
 
 /*-----header restaurants---*/
@@ -98,54 +100,70 @@
 }
  
 /*----contenu cards menu---*/
-.meal {
-    &-title {
-    padding: 15px 0 0 10px;
-    font-size: 18px;
-    font-weight: bold;
-    margin: 0;
-  }
+.menu {
+  display: flex;
+  flex-direction: row;    
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+  position: relative;
   &-display {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-left:10px;
+    flex-direction: column;
+    padding:12px;
     font-size: 16px;   
     margin: 0;
+    width: 100%;
+    height :72px;
+    text-overflow: ellipsis;
+    overflow: hidden;
     &__text {
       white-space:nowrap;
       padding-top: 4px;
       margin: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
       &--bold {
       font-weight: bold;
-      padding-right: 15px;
+      }
     }
+  }
+  &-checkbox {
+    background-color: #99E2D0;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px ;
+    padding: 5px;
+    margin-right: -34%;
+    overflow: hidden;
+    width: 25%;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.5s;
+    &__icon{
+    color: $secondary-font;
+      &::before{
+       @include icons (900, "\f058", 25px);
+       top: 22px;
+       right: 22px;
+       margin-right: -34%
+      }
+    }
+  }
+    &:hover &-checkbox ::before{
+      margin-right: 0;
+      transition-duration: 0.5s;
+    }
+    &:hover &-checkbox{
+      margin-right: 0;
+      transition-duration: 0.5s;
     }
     
-  } 
+}  
+    
 
-}
-
-/*-----button Commandez-----*/
-.container-order {
-  height :90px;
-  margin : 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
- 
-.btn-order {
- @include btn-gradient ($width: 190px, $height: 50px);
-  &__text {
-  @include btn-gradient__text;
-  }
-  &:hover{
-    filter: opacity(80%);
-    filter: drop-shadow(5px 6px 2px $shadow-color);
-    transform: scale(1.15);
-  }
-} 
 
  
 

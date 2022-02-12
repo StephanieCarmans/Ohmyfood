@@ -1,0 +1,20 @@
+/*-----button Commandez-----*/
+.container-order {
+    height :90px;
+    margin : 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+   
+  .btn-order {
+   @include btn-gradient ($width: 190px, $height: 50px);
+    &__text {
+    @include btn-gradient__text;
+    }
+    &:hover{
+      filter: opacity(80%);
+      filter: drop-shadow(5px 6px 2px $shadow-color);
+      transform: scale(1.15);
+    }
+  } 
