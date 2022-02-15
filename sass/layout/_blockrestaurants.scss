@@ -29,6 +29,7 @@
   &--menu{
     height: 500px;
     margin-bottom: 25px;
+    padding: 0 15px;
   }
   &__title{
     padding: 15px;
@@ -37,6 +38,16 @@
     font-size: 20px;
     &--menu {
       font-size: 19px;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 15%;
+        height: 3px;
+        border-bottom: 3px solid #99E2D0;
+        left: 15px;
+        top: 40px;
+      }
     }
   }
   
