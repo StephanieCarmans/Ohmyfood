@@ -44,17 +44,26 @@
   padding: 15px 20px;
   margin: 0 0 5px 0;
   position: relative;
+  column-gap: 70px; 
+  
   &__arrow {
-    width: 30px;
-    height: 30px;
-    position: absolute;
+    width: 40px;
+    height: 34px;  
+    position: absolute;  
+    font-size: 22px;
+    top: 20px;
     left: 30px;
-    top: 25px;
-  }  
+    }
   &__logo {
     align-self: center;
-  }  
- }
+    @media screen and (min-width:768px) and (max-width:991px) {
+      transform: scale(1.25);
+    }  
+    @media screen and (min-width:992px) {
+      transform: scale(1.5);
+    }  
+  }
+}
 
  /*--------Banner-----*/
  .board {
@@ -62,10 +71,17 @@
  }
  .board img{
     width: 100%;
-    height: 300px;
+    height: 330px;
     position: relative;
-    top: -10px;
+    top: -15px;
     margin: 0;
+    object-fit: cover;
+    @media screen and (min-width:768px) {
+      height: 500px;
+    }  
+    @media screen and (min-width:992px) {
+      height: 800px;
+    }  
 }
 
 
@@ -76,16 +92,29 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 5px 0 0 0;
+  margin: 55px 0 0 0;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   position: relative;
+  @media screen and (min-width:768px) and (max-width:991px)  {
+    margin:180px 0 0 0;
+  }
+  @media screen and (min-width:992px) {
+    margin:420px 0 0 0;
+    height : 450px;
+  }    
+  
   &__title {
     margin:25px 0 20px 15px;
     font-family: shrikhand;
     font-weight: lighter;
     font-size: 30px;
-   }
+    @media screen and (min-width:768px) {
+      margin:25px 20px 15px;
+      display:flex;
+      justify-content: center;
+    }  
+  }
   /*heart*/
   &::before {
     @include icons(400,"\f004", 25px);
@@ -97,10 +126,12 @@
     opacity:1;
     transform: scale(1);
     transition: all 400ms ease-in-out;
+    @media screen and (min-width:768px) {
+      right: 130px;
+      font-size: 30px;
     }
-    &:hover::before{
-    color: lighten($secondary-color, 25%);
-   } 
+  }
+ 
     &::after{
     @include icons(900,"\f004", 25px);    
     right:35px;
@@ -112,12 +143,28 @@
     opacity:0;
     transform: scale(1);
     transition: all 2500ms ease-in-out;
+    @media screen and (min-width:768px) {
+      right: 130px;
+      font-size: 30px;
+    }
    }
     &:hover::after{
     opacity:1;
     transform: scale(1.2);    
     }
     /*heart*/
+    &__row {
+      display: flex;
+      flex-direction: column;
+      height: 1000px;
+      width: 100%;
+      @media screen and (min-width:992px) {
+        display:flex;
+        justify-content: center;
+        flex-direction: row;
+        height: 350px
+      }  
+    }
   }
 
  
@@ -159,13 +206,16 @@
       white-space:nowrap;
       text-overflow: ellipsis;
       margin: 0;      
-     }  
+    } 
      &__sub {
       overflow: hidden;
       white-space:nowrap;
       text-overflow: ellipsis;
       margin: 0;    
       font-size: 16px;
+      @media screen and (min-width:992px) {
+        font-size: 14px;
+     }  
       }
     &__price  {
       font-weight: bold;
@@ -173,6 +223,9 @@
       align-items: flex-end;
       padding-left:6px;
       padding-top: 21px;
+      @media screen and (min-width:992px) {
+        font-size: 14px;
+     } 
       }
   &:hover &-checkbox {
     margin-right: -10px;
@@ -183,6 +236,7 @@
     transition-duration: 0.5s;
     animation: rotation 0.5s ease-in-out;
   }
+    
 }  
 
 .menu-checkbox {
