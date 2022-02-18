@@ -1,22 +1,23 @@
 /*-----button Explorez---*/
-.container{
+.container {
     display: flex;
     justify-content: center;
   }
   
   .btn-explore {
     @include btn-gradient;
-    @media screen and (min-width:991px){
+    @media screen and (min-width:991px) {
       width:300px;
       height: 70px;
     }
     &__text {
       @include btn-gradient__text;
-    @media screen and (min-width:991px){
+      @media screen and (min-width:991px) {
       font-size: 20px;
+      }
     }
-    }
-    &:hover{
+
+    &:hover {
       filter: opacity(80%);
       filter: drop-shadow(5px 6px 2px $shadow-color);
       transform: scale(1.15);

@@ -9,36 +9,52 @@
   align-content: space-between;
   margin: 50px 0 0 0;
   padding: 40px 0 20px 0;
-  &__title{
+
+  &__title {
     margin-left: 5%;
   }
-  @media screen and (min-width:768px){
-     &__title {
-     margin: 0;
-     text-align: center;
-     font-size: 26px;
+
+  @media screen and (min-width:768px) {
+    &__title {
+    margin: 0;
+    text-align: center;
+    font-size: 26px;
     }
   }
 }
 
-.block-card{
+.block-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  &--menu{
+  @media screen and (min-width:768px) {
+    justify-content: space-around;
+    flex-flow: row wrap;
+  } 
+  &--menu {
     height: 500px;
     margin-bottom: 25px;
     padding: 0 15px;
+    @media screen and (min-width:768px) {
+      flex-flow: column wrap;
+      justify-content: space-between;
+      height:350px;
+      margin: 5px;
+      padding: 5px;
+    }
   }
-  &__title{
+
+  &__title {
     padding: 15px;
     margin: 0;
     font-weight: 400;
     font-size: 20px;
+
     &--menu {
       font-size: 19px;
       position: relative;
+
       &::after {
         content: "";
         position: absolute;
@@ -50,48 +66,25 @@
       }
     }
   }
-  
-  @media screen and (min-width:992px){
-      justify-content: space-around;
-      flex-flow: row wrap;
-      &--menu {
-        flex-flow: column wrap;
-        justify-content: space-between;
-        width: 35%;
-        height:350px;
-        margin: 5px;
-        padding: 5px;
-      }
-      
-    }
 }
+
 .card {
-  background-color: $tertiary-bkg-color;
-  border-radius : 20px;
-  color: $primary-font;
-  position: relative;
-  filter: drop-shadow(3px 4px 2px $shadow-color);
-  &--big{
-    height: 260px;
-    width:90%;
-    margin: 5%;
-  }
-  &--short{
-    height: 72px;
-    width: 94%;
-    margin: 3%;
-  }
+  @include card;
+
   &:visited {
     color: $primary-font;
   }  
+
   &:hover  {
-  filter: drop-shadow(5px 6px 2px $shadow-color);
-  opacity: 80%;
+    filter: drop-shadow(5px 6px 2px $shadow-color);
+    opacity: 80%;
   }
+
   @media screen and (min-width:768px) {
     width: 45%;
     margin: 2%;
   } 
+
   @media screen and (min-width:992px) {
     height: 470px;
   } 
@@ -104,48 +97,44 @@
   object-fit: cover;   
   width: 100%;
   overflow: hidden;
+
   @media screen and (min-width:992px) {
     height: 370px;
   } 
 }
 
-.card__display{
+.card__display {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin:5%;
-  &--title{ 
+  justify-content: space-evenly;
+  margin: 4%;
+
+  &--title { 
     margin:0;
     font-size: 20px;
   }
-  &--text{ 
+
+  &--text { 
     margin:0;
   }
+
   /*heart*/
   &::before {
     @include icons(400,"\f004", 25px);
     right:35px;
-    color: inherit;
-    background-clip: text;
-    -webkit-background-clip: text;
-    opacity:1;
-    transform: scale(1);
-    transition: all 400ms ease-in-out;
+    @include solid_heart;
     }
+
   &:hover::before{
     color: lighten($secondary-color, 25%);
   } 
+
   &::after{
     @include icons(900,"\f004", 25px);    
     right:35px;
-    color: transparent;
-    background: linear-gradient(175deg, $secondary-color, $primary-color);
-    background-clip: text;
-    -webkit-background-clip: text;
-    opacity:0;
-    transform: scale(1);
-    transition: all 2500ms ease-in-out;
+    @include gradient_heart;
   }
+  
   &:hover::after{
     opacity:1;
     transform: scale(1.2);    

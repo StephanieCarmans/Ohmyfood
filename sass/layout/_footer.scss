@@ -1,33 +1,38 @@
 /*------------------Footer----------------*/
 
 .footer{
-    color: $secondary-font;
-    background-color: $footer-bkg-color;
-    margin:aoto;
-    padding-bottom: 30px;
-    height: auto;
-    &__title {
-      font-family:'shrikhand';
-      font-size: 20px;
-      font-weight: lighter;
-      padding: 20px 0 10px 5px;
-      margin:0 0 0 14px;
-    }
-    &__text{
-      padding: 0 0 0 40px;
-      line-height: 1.8;
-      position: relative;
-      &--ustensils::before{
+  color: $secondary-font;
+  background-color: $footer-bkg-color;
+  margin:aoto;
+  padding-bottom: 30px;
+  height: auto;
+
+  &__title {
+    font-family:'shrikhand';
+    font-size: 20px;
+    font-weight: lighter;
+    padding: 20px 0 10px 5px;
+    margin:0 0 0 14px;
+  }
+
+  &__text{
+    padding: 0 0 0 40px;
+    line-height: 1.8;
+    position: relative;
+
+      &--ustensils::before {
         @include icons(900, "\f2e7", 16px);
         left: 14px;
         padding-right:14px;
       }
-      &--hands::before{
+
+      &--hands::before {
         @include icons(900,"\f4c4", 14px);
         left: 14px;    
         padding-right: 14px; 
       }
-      &--padding{
+
+      &--padding {
       padding: 0 0 0 14px;
       }
     }
@@ -39,16 +44,15 @@
         margin:0;
         text-align: center;
       }
+
       &__display {
         display: flex;
         justify-items: center;
         justify-content: space-around;  
         padding: 10px;
       }
+
       &__text {
-        font-size: 18px;
-      }
-      &__text2 {
         font-size: 18px;
       }
     } 

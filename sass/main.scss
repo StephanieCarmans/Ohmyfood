@@ -2,6 +2,7 @@
 
 @import "utils/variables";
 @import "utils/mixins";
+@import "utils/keyframes";
 
 @import "layout/headerhomepage";
 @import "layout/searchhomepage";
@@ -14,26 +15,7 @@
 @import "components/buttonexplore";
 
 
-@keyframes rotation {
-  0% {
-    transform: rotate(-247deg);
-  }
 
-  100% {
-    transform : rotate (0deg);
-  }
-}
-
-@keyframes appear {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }  
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
 
 /*-----header restaurants---*/
 .restaurant-header {
@@ -44,8 +26,7 @@
   padding: 15px 20px;
   margin: 0 0 5px 0;
   position: relative;
-  column-gap: 70px; 
-  
+  column-gap: 70px;   
   &__arrow {
     width: 40px;
     height: 34px;  
@@ -65,11 +46,13 @@
   }
 }
 
+
  /*--------Banner-----*/
- .board {
+.board {
    height: 230px;
- }
- .board img{
+}
+
+.board img {
     width: 100%;
     height: 330px;
     position: relative;
@@ -115,57 +98,50 @@
       justify-content: center;
     }  
   }
+
   /*heart*/
   &::before {
     @include icons(400,"\f004", 25px);
     right:35px;
     top: 30px;
-    color: inherit;
-    background-clip: text;
-    -webkit-background-clip: text;
-    opacity:1;
-    transform: scale(1);
-    transition: all 400ms ease-in-out;
-    @media screen and (min-width:768px) {
+    @include solid_heart;
+      @media screen and (min-width:768px) {
       right: 130px;
       font-size: 30px;
     }
   }
  
-    &::after{
+  &::after {
     @include icons(900,"\f004", 25px);    
     right:35px;
     top:30px;
-    color: transparent;
-    background: linear-gradient(175deg, $secondary-color, $primary-color);
-    background-clip: text;
-    -webkit-background-clip: text;
-    opacity:0;
-    transform: scale(1);
-    transition: all 2500ms ease-in-out;
-    @media screen and (min-width:768px) {
+    @include gradient_heart;
+      @media screen and (min-width:768px) {
       right: 130px;
       font-size: 30px;
     }
-   }
-    &:hover::after{
+  }
+
+  &:hover::after {
     opacity:1;
     transform: scale(1.2);    
-    }
-    /*heart*/
-    &__row {
-      display: flex;
-      flex-direction: column;
-      height: 1000px;
-      width: 100%;
-      @media screen and (min-width:992px) {
-        display:flex;
-        justify-content: center;
-        flex-direction: row;
-        height: 350px
-      }  
-    }
   }
+  /*heart*/
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    height: 1000px;
+    width: 98%;
+    margin: 1% 2%;
+    @media screen and (min-width:992px) {
+      display:flex;
+      justify-content: center;
+      flex-direction: row;
+      height: 350px
+    }  
+  }
+}
 
  
 /*----contenu cards menu---*/
@@ -174,69 +150,62 @@
   display: flex; 
   justify-content: center;
   align-items: center;
-  height: 75px;
-  width: 100%;
-  margin : 10px 0;
+  @include card ($height: 75px, $width: 100%, $margin: 10px 0);
   padding: 10px;
-  background-color: $tertiary-bkg-color;
-  border-radius : 20px;
-  color: $primary-font;
   overflow: hidden;
-  filter: drop-shadow(3px 4px 2px $shadow-color);
   animation: 2s ease-in-out appear;
   animation-fill-mode: both;
   transform: scale(0);
+
   &:visited {
     color: $primary-font;
   }  
+
   &:hover  {
     filter: drop-shadow(5px 6px 2px $shadow-color);
     opacity: 80%;
   }
-    &__display {
-      overflow: hidden;
-      white-space:nowrap;
-      text-overflow: ellipsis;
-      flex: 1;
-      justify-content: flex-start;
-    }
-    &__title {
-      font-size: 18px;
-      overflow: hidden;
-      white-space:nowrap;
-      text-overflow: ellipsis;
-      margin: 0;      
+
+  &__display {
+    @include ellipsis;
+    flex: 1;
+    justify-content: flex-start;
+  }
+
+  &__title {
+    font-size: 18px;
+    @include ellipsis;
+  } 
+
+  &__sub {
+    @include ellipsis;
+    font-size: 16px;
+    @media screen and (min-width:992px) {
+      font-size: 14px;
+    }  
+  }
+
+  &__price  {
+    font-weight: bold;
+    display: flex;
+    align-items: flex-end;
+    padding-left:6px;
+    padding-top: 21px;
+    @media screen and (min-width:992px) {
+      font-size: 14px;
     } 
-     &__sub {
-      overflow: hidden;
-      white-space:nowrap;
-      text-overflow: ellipsis;
-      margin: 0;    
-      font-size: 16px;
-      @media screen and (min-width:992px) {
-        font-size: 14px;
-     }  
-      }
-    &__price  {
-      font-weight: bold;
-      display: flex;
-      align-items: flex-end;
-      padding-left:6px;
-      padding-top: 21px;
-      @media screen and (min-width:992px) {
-        font-size: 14px;
-     } 
-      }
+  }  
+
   &:hover &-checkbox {
     margin-right: -10px;
     transition-duration: 0.5s;
-  }    
+  }   
+
   &:hover &-checkbox ::before{
     margin-right: -0px;
     transition-duration: 0.5s;
     animation: rotation 0.5s ease-in-out;
-  }
-    
+  }    
 }  
 
 .menu-checkbox {
@@ -269,6 +238,39 @@
 
 .animation-delay2 {
   animation-delay: 3s;
+}
+
+/*---------Loader-----------*/
+
+.loader-zone {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: #F8F8FF;  
+  animation: loader 4s;
+  animation-fill-mode: both;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity:80%;
+}
+
+.spinner-container {
+	width: 50px;
+	height: 50px;
+	clear: both;
+	margin: 20px auto;
+}
+
+
+.spinner-circle {
+	border-bottom: 6px $primary-color solid;
+  border-top: 6px $secondary-color solid;
+	border-radius: 50%;
+	animation: spinner 1s infinite linear;
 }
 
 

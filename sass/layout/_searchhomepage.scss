@@ -8,68 +8,74 @@
     justify-content: center;  
   }
   
-  .form {
-    width:200px; 
-    position: relative;
-    text-align: center;
-    &::before{
-      @include icons(900, "\f3c5", 22px);
-      width:10%;
-      top: 18px;
-      right:90%;
-      @media screen and (min-width:991px){
-        right: 75%;
-        font-size: 24px;
-      }
-    }
-    @media screen and (min-width:991px){
-      width: 300px;
+  
+.form {
+  width:200px; 
+  position: relative;
+  text-align: center;
+  &::before {
+    @include icons(900, "\f3c5", 22px);
+    width:10%;
+    top: 18px;
+    right:90%;
+
+    @media screen and (min-width:991px) {
+      right: 75%;
+      font-size: 24px;
     }
   }
-  
-  .form input{
-    border: none;
-    background-color: $primary-bkg-color;
-    font-size: 18px;
-    width: 80%;
-    position: absolute; 
-    top: 20px; 
-    right: 5%;
-    @media screen and (min-width:991px){
-      font-size: 20px;
-      right: -10%;
-    }
+
+  @media screen and (min-width:991px) {
+    width: 300px;
   }
+}
   
-  .background{
+.form input {
+  border: none;
+  background-color: $primary-bkg-color;
+  font-size: 18px;
+  width: 80%;
+  position: absolute; 
+  top: 20px; 
+  right: 5%;
+
+  @media screen and (min-width:991px) {
+    font-size: 20px;
+    right: -10%;
+  }
+}
+  
+.background {
   background-color:$secondary-bkg-color;
   height: 300px;
-  }
+}
   
-  .search-text{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    font-size: 22px;
-    padding-top: 40px;
-    margin-top: 0;
-    @media screen and (min-width:991px){
+.search-text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: 22px;
+  padding-top: 40px;
+  margin-top: 0;
+
+  @media screen and (min-width:991px) {
       font-size: 26px;
-    }
   }
+}
   
-  .search-explain{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    padding-bottom: 25px;
-    font-size: 18px;
-    @media screen and (min-width:991px){
-      font-size: 20px;
-    }
+.search-explain {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 25px;
+  font-size: 18px;
+
+  @media screen and (min-width:991px) {
+    font-size: 20px;
   }
+}
   
   
   

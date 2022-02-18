@@ -22,7 +22,7 @@
       justify-content:center;
       align-items:center;
       margin-left:$margin-left;
-      margin-top: 5%;
+      margin-top: 1%;
   }
 
   /*mixin grand bouton section howto*/  
@@ -59,4 +59,45 @@
     color: $secondary-font;
     align-self: center;
     letter-spacing: 1px;
+  }
+
+  /*mixin card*/
+  @mixin card ($height:260px, $width: 90%, $margin: 5%) {
+    background-color: $tertiary-bkg-color;
+    border-radius : 20px;
+    color: $primary-font;
+    position: relative;
+    filter: drop-shadow(3px 4px 2px $shadow-color);
+    height: $height;
+    width:$width;
+    margin: $margin;
+  }
+
+  /*mixin ... */
+  @mixin ellipsis {
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    margin: 0;  
+  }
+
+  /*mixin solid heart */
+  @mixin solid_heart {
+    color: inherit;
+    background-clip: text;
+    -webkit-background-clip: text;
+    opacity:1;
+    transform: scale(1);
+    transition: all 400ms ease-in-out;
+  }
+
+  /*mixin gradient heart */
+  @mixin gradient_heart {
+    color: transparent;
+    background: linear-gradient(175deg, $secondary-color, $primary-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+    opacity:0;
+    transform: scale(1);
+    transition: all 2500ms ease-in-out;
   }
