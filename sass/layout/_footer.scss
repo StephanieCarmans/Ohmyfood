@@ -19,6 +19,7 @@
     padding: 0 0 0 40px;
     line-height: 1.8;
     position: relative;
+    margin-left: 9px;
 
       &--ustensils::before {
         @include icons(900, "\f2e7", 16px);

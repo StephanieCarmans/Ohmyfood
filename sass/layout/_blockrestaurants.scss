@@ -7,11 +7,11 @@
   flex-direction: column;
   width: 100%;
   align-content: space-between;
-  margin: 50px 0 0 0;
+  margin: 50px 0 20px 0;
   padding: 40px 0 20px 0;
 
   &__title {
-    margin-left: 5%;
+    margin: 19px 0 0 19px;
   }
 
   @media screen and (min-width:768px) {
@@ -33,13 +33,14 @@
     flex-flow: row wrap;
   } 
   &--menu {
-    height: 500px;
+    height: fit-content; /*a supprimer?*/
     margin-bottom: 25px;
-    padding: 0 15px;
+    padding: 0 8px 0 5px;
+    width: 100%;
     @media screen and (min-width:768px) {
-      flex-flow: column wrap;
-      justify-content: space-between;
-      height:350px;
+      flex-direction: column;
+      justify-content: flex-start;
+     /* height:450px;*/
       margin: 5px;
       padding: 5px;
     }

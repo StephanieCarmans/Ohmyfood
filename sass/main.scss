@@ -70,7 +70,7 @@
 
 /*----block-menu----*/
 .block-menu {
-  height: 1150px;
+  height: fit-content; /*1150px;*/
   background-color:$secondary-bkg-color;
   display: flex;
   flex-direction: column;
@@ -81,10 +81,11 @@
   position: relative;
   @media screen and (min-width:768px) and (max-width:991px)  {
     margin:180px 0 0 0;
+   /* height: 550px;*/
   }
   @media screen and (min-width:992px) {
     margin:420px 0 0 0;
-    height : 450px;
+   /* height : 450px;*/
   }    
   
   &__title {
@@ -103,22 +104,24 @@
   &::before {
     @include icons(400,"\f004", 25px);
     right:35px;
-    top: 30px;
+    top: 33px;
     @include solid_heart;
       @media screen and (min-width:768px) {
       right: 130px;
       font-size: 30px;
+      top: 30px;
     }
   }
  
   &::after {
     @include icons(900,"\f004", 25px);    
     right:35px;
-    top:30px;
+    top:33px;
     @include gradient_heart;
       @media screen and (min-width:768px) {
       right: 130px;
       font-size: 30px;
+      top:30px;
     }
   }
 
@@ -131,9 +134,10 @@
   &__row {
     display: flex;
     flex-direction: column;
-    height: 1000px;
+    /*height: 1000px;*/
+    height: fit-content;
     width: 98%;
-    margin: 1% 2%;
+    margin: 1%;
     @media screen and (min-width:992px) {
       display:flex;
       justify-content: center;
@@ -150,7 +154,7 @@
   display: flex; 
   justify-content: center;
   align-items: center;
-  @include card ($height: 75px, $width: 100%, $margin: 10px 0);
+  @include card ($height: 75px, $width: 98%, $margin: 10px 5px);
   padding: 10px;
   overflow: hidden;
   animation: 2s ease-in-out appear;
@@ -173,13 +177,13 @@
   }
 
   &__title {
-    font-size: 18px;
+    font-size: 16px;
     @include ellipsis;
   } 
 
   &__sub {
     @include ellipsis;
-    font-size: 16px;
+    font-size: 15px;
     @media screen and (min-width:992px) {
       font-size: 14px;
     }  
@@ -255,7 +259,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity:80%;
+ /* opacity:80%;*/
 }
 
 .spinner-container {

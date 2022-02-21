@@ -71,7 +71,8 @@
   text-align: center;
   padding-bottom: 25px;
   font-size: 18px;
-
+  color: $shadowed-font;
+  
   @media screen and (min-width:991px) {
     font-size: 20px;
   }

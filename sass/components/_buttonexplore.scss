@@ -2,6 +2,7 @@
 .container {
     display: flex;
     justify-content: center;
+    margin-top: 10px;
   }
   
   .btn-explore {
@@ -18,7 +19,7 @@
     }
 
     &:hover {
-      filter: opacity(80%);
+      opacity: 80%;
       filter: drop-shadow(5px 6px 2px $shadow-color);
       transform: scale(1.15);
     }

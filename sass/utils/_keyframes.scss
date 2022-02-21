@@ -4,7 +4,7 @@
     }
   
     100% {
-      transform : rotate (0deg);
+      transform: rotate (0deg);
     }
   }
   
@@ -30,11 +30,17 @@
   } 
      
   @keyframes loader {
-    0% {opacity: 1;
+    0% {
+      opacity: 1;
     }
-    25% {opacity: 0.7;
+    25% {
+      opacity: 0.7;
     }
-    75% {opacity: 0.3;
+    75% {
+      opacity: 0.5;
+    }
+    90% {
+      opacity: 0.7;
     }
     100% {
       opacity: 0;
