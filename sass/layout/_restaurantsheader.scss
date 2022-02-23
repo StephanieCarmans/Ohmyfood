@@ -1,0 +1,29 @@
+/*-----header restaurants---*/
+.restaurant-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    margin: 0 0 5px 0;
+    position: relative;
+    column-gap: 70px;   
+    &__arrow {
+      width: 40px;
+      height: 34px;  
+      position: absolute;  
+      font-size: 22px;
+      top: 20px;
+      left: 30px;
+      }
+    &__logo {
+      align-self: center;
+      @media screen and (min-width:768px) and (max-width:991px) {
+        transform: scale(1.25);
+      }  
+      @media screen and (min-width:992px) {
+        transform: scale(1.5);
+      }  
+    }
+  }
+  

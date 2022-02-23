@@ -1,0 +1,218 @@
+/*----block-menu----*/
+.block-menu {
+    height: fit-content;
+    background-color:$secondary-bkg-color;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 55px 0 0 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    position: relative;
+    @media screen and (min-width:768px) and (max-width:991px)  {
+      margin:180px 0 0 0;
+    }
+  
+    @media screen and (min-width:992px) {
+      margin:420px 0 0 0;
+    }    
+    
+    &__title {
+      margin:25px 0 20px 15px;
+      font-family: shrikhand;
+      font-weight: lighter;
+      font-size: 30px;
+      @media screen and (min-width:768px) {
+        margin:25px 20px 15px;
+        display:flex;
+        justify-content: center;
+      }  
+    }
+  
+    /*heart*/
+    &::before {
+      @include icons(400,"\f004", 25px);
+      right:35px;
+      top: 33px;
+      @include solid_heart;
+        @media screen and (min-width:768px) {
+        right: 130px;
+        font-size: 30px;
+        top: 30px;
+      }
+    }
+   
+    &::after {
+      @include icons(900,"\f004", 25px);    
+      right:35px;
+      top:33px;
+      @include gradient_heart;
+        @media screen and (min-width:768px) {
+        right: 130px;
+        font-size: 30px;
+        top:30px;
+      }
+    }
+  
+    &:hover::after {
+      opacity:1;
+      transform: scale(1.2);    
+    }
+    /*heart*/
+  
+    &__row {
+      display: flex;
+      flex-direction: column;
+      height: fit-content;
+      width: 98%;
+      margin: 1%;
+      @media screen and (min-width:992px) {
+        display:flex;
+        justify-content: center;
+        flex-direction: row;
+      }  
+    }
+  }
+  
+   /*-contenainer meal*/
+  .block-meal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 25px;
+    padding: 0 8px 0 5px;
+      @media screen and (min-width:768px) and (max-width:991px) {
+        flex-direction: column;
+        justify-content: flex-start;
+        margin: 5px;
+        padding: 5px;
+      }
+      @media screen and (min-width:992px) {
+        flex-direction: column;
+        justify-content: flex-start;
+        margin: 5px;
+        padding: 5px;
+        width: 32%;
+      }
+  
+    &__title {
+      padding: 15px;
+      margin: 0;
+      font-weight: 400;
+      font-size: 19px;
+      position: relative;
+  
+        &::after {
+          content: "";
+          position: absolute;
+          width: 50px;
+          height: 3px;
+          border-bottom: 3px solid #99E2D0;
+          left: 15px;
+          top: 40px;
+        }
+    }
+  }
+  
+  
+  
+  /*---- cards menu ---*/
+      
+  .menu {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    @include card ($height: 75px, $width: 98%, $margin: 10px 5px);
+    padding: 10px;
+    overflow: hidden;
+    animation: 2s ease-in-out appear;
+    animation-fill-mode: both;
+    transform: scale(0);
+  
+    &:visited {
+      color: $primary-font;
+    }  
+  
+    &:hover  {
+      filter: drop-shadow(5px 6px 2px $shadow-color);
+      opacity: 80%;
+    }
+  
+    &__display {
+      @include ellipsis;
+      flex: 1;
+      justify-content: flex-start;
+    }
+  
+    &__title {
+      font-size: 16px;
+      @include ellipsis;
+    } 
+  
+    &__sub {
+      @include ellipsis;
+      font-size: 15px;
+      @media screen and (min-width:992px) {
+        font-size: 13px;
+      }  
+    }
+  
+    &__price  {
+      font-weight: bold;
+      display: flex;
+      align-items: flex-end;
+      padding-left:6px;
+      padding-top: 21px;
+      @media screen and (min-width:992px) {
+        font-size: 13px;
+      } 
+    }  
+  
+    &:hover &-checkbox {
+      margin-right: -10px;
+      transition-duration: 0.5s;
+    }   
+  
+    &:hover &-checkbox ::before{
+      margin-right: -0px;
+      transition-duration: 0.5s;
+      animation: rotation 0.5s ease-in-out;
+    }    
+  }  
+  
+  /* checkbox*/
+  
+  .menu-checkbox {
+    background-color: #99E2D0;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px ;
+    padding: 5px;
+    width: 65px;
+    height: 75px;
+    margin: -16px -80px -16px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition-duration: 0.5s;
+    &__icon{
+      color: $secondary-font;
+      &::before{
+       @include icons (900, "\f058", 25px);
+        top: 22px;
+        right: 22px;
+        margin-right: -80%;
+      }
+    }
+  }
+  
+  /* delays animation "appear" */
+  .animation-delay1 {
+    animation-delay: 0.5s;
+  } 
+  
+  .animation-delay2 {
+    animation-delay: 1s;
+  }
