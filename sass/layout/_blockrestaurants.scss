@@ -32,47 +32,12 @@
     justify-content: space-around;
     flex-flow: row wrap;
   } 
-  &--menu {
-    height: fit-content;
-    margin-bottom: 25px;
-    padding: 0 8px 0 5px;
-    width: 100%;
-
-    @media screen and (min-width:768px) and (max-width:991px) {
-      flex-direction: column;
-      justify-content: flex-start;
-      margin: 5px;
-      padding: 5px;
-    }
-    @media screen and (min-width:992px) {
-      flex-direction: column;
-      justify-content: flex-start;
-      margin: 5px;
-      padding: 5px;
-      width: 32%;
-    }
-  }
-
+  
   &__title {
     padding: 15px;
     margin: 0;
     font-weight: 400;
     font-size: 20px;
-
-    &--menu {
-      font-size: 19px;
-      position: relative;
-
-      &::after {
-        content: "";
-        position: absolute;
-        width: 50px;
-        height: 3px;
-        border-bottom: 3px solid #99E2D0;
-        left: 15px;
-        top: 40px;
-      }
-    }
   }
 }
 

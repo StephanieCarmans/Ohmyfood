@@ -450,40 +450,11 @@ h2 h3 {
     flex-flow: row wrap;
   }
 }
-.block-card--menu {
-  height: fit-content;
-  /*a supprimer?*/
-  margin-bottom: 25px;
-  padding: 0 8px 0 5px;
-  width: 100%;
-}
-@media screen and (min-width: 768px) {
-  .block-card--menu {
-    flex-direction: column;
-    justify-content: flex-start;
-    /* height:450px;*/
-    margin: 5px;
-    padding: 5px;
-  }
-}
 .block-card__title {
   padding: 15px;
   margin: 0;
   font-weight: 400;
   font-size: 20px;
-}
-.block-card__title--menu {
-  font-size: 19px;
-  position: relative;
-}
-.block-card__title--menu::after {
-  content: "";
-  position: absolute;
-  width: 50px;
-  height: 3px;
-  border-bottom: 3px solid #99E2D0;
-  left: 15px;
-  top: 40px;
 }
 
 .card {
@@ -697,7 +668,7 @@ h2 h3 {
 }
 @media screen and (min-width: 991px) {
   .container-order {
-    margin: 100px 20px 60px 20px;
+    margin: 60px 20px 60px 20px;
   }
 }
 
@@ -932,7 +903,6 @@ h2 h3 {
 .block-menu__row {
   display: flex;
   flex-direction: column;
-  /*height: 1000px;*/
   height: fit-content;
   width: 98%;
   margin: 1%;
@@ -942,8 +912,52 @@ h2 h3 {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    height: 350px;
+    /* height: 350px*/
   }
+}
+
+/*-----contenant cards par type de plats à retravailler + blosckrestaurant-----*/
+.block-meal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: fit-content;
+  margin-bottom: 25px;
+  padding: 0 8px 0 5px;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .block-meal {
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 5px;
+    padding: 5px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .block-meal {
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 5px;
+    padding: 5px;
+    width: 32%;
+  }
+}
+.block-meal__title {
+  padding: 15px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 19px;
+  position: relative;
+}
+.block-meal__title::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  border-bottom: 3px solid #99E2D0;
+  left: 15px;
+  top: 40px;
 }
 
 /*----contenu cards menu---*/
@@ -1055,11 +1069,11 @@ h2 h3 {
 }
 
 .animation-delay1 {
-  animation-delay: 1.5s;
+  animation-delay: 0.5s;
 }
 
 .animation-delay2 {
-  animation-delay: 3s;
+  animation-delay: 1s;
 }
 
 /*---------Loader-----------*/
@@ -1070,7 +1084,7 @@ h2 h3 {
   left: 0;
   top: 0;
   background-color: #F8F8FF;
-  animation: loader 4s;
+  animation: loader 2.7s;
   animation-fill-mode: both;
   z-index: 10000;
   display: flex;
