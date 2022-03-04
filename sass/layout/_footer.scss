@@ -1,12 +1,11 @@
 /*------------------Footer----------------*/
 
-.footer{
+.footer {
   color: $secondary-font;
   background-color: $footer-bkg-color;
-  margin:aoto;
+  margin:auto;
   padding-bottom: 30px;
   height: auto;
-
   &__title {
     font-family:'shrikhand';
     font-size: 20px;
@@ -14,45 +13,38 @@
     padding: 20px 0 10px 5px;
     margin:0 0 0 14px;
   }
-
-  &__text{
+  &__text {
     padding: 0 0 0 40px;
     line-height: 1.8;
     position: relative;
     margin-left: 9px;
-
       &--ustensils::before {
         @include icons(900, "\f2e7", 16px);
         left: 14px;
         padding-right:14px;
       }
-
       &--hands::before {
         @include icons(900,"\f4c4", 14px);
         left: 14px;    
         padding-right: 14px; 
       }
-
       &--padding {
       padding: 0 0 0 14px;
       }
     }
-    
-    @media screen and (min-width:768px) {
+        @media screen and (min-width:768px) {
       &__title {
         font-size: 26px;
         padding: 10px;
         margin:0;
         text-align: center;
       }
-
       &__display {
         display: flex;
         justify-items: center;
         justify-content: space-around;  
         padding: 10px;
       }
-
       &__text {
         font-size: 17px;
         margin-left: 0;

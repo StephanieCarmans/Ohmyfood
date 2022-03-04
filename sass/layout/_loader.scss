@@ -1,32 +1,32 @@
 /*---------Loader-----------*/
 
 .loader-zone {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background-color: #F8F8FF;  
-    animation: loader 2.7s;
-    animation-fill-mode: both;
-    z-index: 10000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: $loader-bkg;  
+  animation: loader 2.7s;
+  animation-fill-mode: both;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   }
   
   .spinner-container {
-      width: 50px;
-      height: 50px;
-      clear: both;
-      margin: 20px auto;
+    width: 50px;
+    height: 50px;
+    clear: both;
+    margin: 20px auto;
   }
   
   
   .spinner-circle {
-      border-bottom: 6px $primary-color solid;
+    border-bottom: 6px $primary-color solid;
     border-top: 6px $secondary-color solid;
-      border-radius: 50%;
-      animation: spinner 1s infinite linear;
+    border-radius: 50%;
+    animation: spinner 1s infinite linear;
   }
   

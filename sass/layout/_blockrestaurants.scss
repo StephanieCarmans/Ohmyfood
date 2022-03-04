@@ -43,21 +43,17 @@
 
 .card {
   @include card;
-
   &:visited {
     color: $primary-font;
   }  
-
   &:hover  {
     filter: drop-shadow(5px 6px 2px $shadow-color);
     opacity: 80%;
   }
-
   @media screen and (min-width:768px) {
     width: 45%;
     margin: 2%;
   } 
-
   @media screen and (min-width:992px) {
     height: 470px;
   } 
@@ -97,17 +93,14 @@
     right:35px;
     @include solid_heart;
     }
-
   &:hover::before{
     color: lighten($secondary-color, 25%);
   } 
-
   &::after{
     @include icons(900,"\f004", 25px);    
     right:35px;
     @include gradient_heart;
-  }
-  
+  }  
   &:hover::after{
     opacity:1;
     transform: scale(1.2);    

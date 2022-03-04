@@ -11,12 +11,10 @@
     position: relative;
     @media screen and (min-width:768px) and (max-width:991px)  {
       margin:180px 0 0 0;
-    }
-  
+    }  
     @media screen and (min-width:992px) {
       margin:420px 0 0 0;
-    }    
-    
+    }        
     &__title {
       margin:25px 0 20px 15px;
       font-family: shrikhand;
@@ -27,8 +25,7 @@
         display:flex;
         justify-content: center;
       }  
-    }
-  
+    }  
     /*heart*/
     &::before {
       @include icons(400,"\f004", 25px);
@@ -40,8 +37,7 @@
         font-size: 30px;
         top: 30px;
       }
-    }
-   
+    }   
     &::after {
       @include icons(900,"\f004", 25px);    
       right:35px;
@@ -52,14 +48,16 @@
         font-size: 30px;
         top:30px;
       }
+    }  
+    &:hover::before {
+      opacity: 0;
+      transition: 2.5s ease-in;
     }
-  
     &:hover::after {
       opacity:1;
       transform: scale(1.2);    
     }
     /*heart*/
-  
     &__row {
       display: flex;
       flex-direction: column;
@@ -95,24 +93,22 @@
         margin: 5px;
         padding: 5px;
         width: 32%;
-      }
-  
+      }  
     &__title {
       padding: 15px;
       margin: 0;
       font-weight: 400;
       font-size: 19px;
-      position: relative;
-  
-        &::after {
-          content: "";
-          position: absolute;
-          width: 50px;
-          height: 3px;
-          border-bottom: 3px solid #99E2D0;
-          left: 15px;
-          top: 40px;
-        }
+      position: relative;  
+      &::after {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        border-bottom: 3px solid $tertiary-color;
+        left: 15px;
+        top: 40px;
+      }
     }
   }
   
@@ -129,39 +125,33 @@
     overflow: hidden;
     animation: 2s ease-in-out appear;
     animation-fill-mode: both;
-    transform: scale(0);
-  
+    transform: scale(0);  
     &:visited {
       color: $primary-font;
-    }  
-  
+    }    
     &:hover  {
       filter: drop-shadow(5px 6px 2px $shadow-color);
       opacity: 80%;
-    }
-  
+    }  
     &__display {
       @include ellipsis;
       flex: 1;
       justify-content: flex-start;
-    }
-  
+    }  
     &__title {
       font-size: 16px;
       @include ellipsis;
       @media screen and (min-width:992px) {
         font-size: 15px;
       }  
-    } 
-  
+    }   
     &__sub {
       @include ellipsis;
       font-size: 15px;
       @media screen and (min-width:992px) {
         font-size: 13px;
       }  
-    }
-  
+    }  
     &__price  {
       font-weight: bold;
       display: flex;
@@ -171,26 +161,22 @@
       @media screen and (min-width:992px) {
         font-size: 13px;
       } 
-    }  
-  
+    }    
     &:hover &-checkbox {
       margin-right: -10px;
       transition-duration: 0.5s;
-    }   
-  
+    } 
     &:hover &-checkbox ::before{
       margin-right: -0px;
-      transition-duration: 0.5s;
-      animation: rotation 0.5s ease-in-out;
+      transition: 0.5s ease-in-out;
+      transform: rotate(360deg);
     }    
   }  
   
   /* checkbox*/
   
   .menu-checkbox {
-    background-color: #99E2D0;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px ;
+    background-color: $tertiary-color;
     padding: 5px;
     width: 65px;
     height: 75px;
@@ -206,7 +192,6 @@
        @include icons (900, "\f058", 25px);
         top: 22px;
         right: 22px;
-        margin-right: -80%;
       }
     }
   }
