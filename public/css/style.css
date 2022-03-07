@@ -49,14 +49,6 @@ h2 h3 {
 /*mixin ... */
 /*mixin solid heart */
 /*mixin gradient heart */
-@keyframes rotation {
-  0% {
-    transform: rotate(-247deg);
-  }
-  100% {
-    transform: rotate 0deg;
-  }
-}
 @keyframes appear {
   0% {
     transform: scale(0);
@@ -86,7 +78,7 @@ h2 h3 {
     opacity: 0.5;
   }
   90% {
-    opacity: 0.7;
+    opacity: 0.3;
   }
   100% {
     opacity: 0;
@@ -746,6 +738,10 @@ h2 h3 {
     top: 30px;
   }
 }
+.block-menu:hover::before {
+  opacity: 0;
+  transition: 2.5s ease-in;
+}
 .block-menu:hover::after {
   opacity: 1;
   transform: scale(1.2);
@@ -885,15 +881,13 @@ h2 h3 {
 }
 .menu:hover .menu-checkbox ::before {
   margin-right: 0px;
-  transition-duration: 0.5s;
-  animation: rotation 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  transform: rotate(360deg);
 }
 
 /* checkbox*/
 .menu-checkbox {
   background-color: #99E2D0;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
   padding: 5px;
   width: 65px;
   height: 75px;
@@ -920,7 +914,6 @@ h2 h3 {
   font-size: 25px;
   top: 22px;
   right: 22px;
-  margin-right: -80%;
 }
 
 /* delays animation "appear" */
@@ -936,7 +929,7 @@ h2 h3 {
 .footer {
   color: white;
   background-color: #353535;
-  margin: aoto;
+  margin: auto;
   padding-bottom: 30px;
   height: auto;
 }
