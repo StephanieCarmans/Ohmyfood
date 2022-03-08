@@ -86,9 +86,9 @@
   &--text { 
     margin:0;
   }
-
+}
   /*heart*/
-  &::before {
+  /*&::before {
     @include icons(400,"\f004", 25px);
     right:35px;
     @include solid_heart;
@@ -105,8 +105,8 @@
     opacity:1;
     transform: scale(1.2);    
   }  
-  /*heart*/
-}
+  /*heart
+}*/
 
 .card__text{
   flex-direction: column;

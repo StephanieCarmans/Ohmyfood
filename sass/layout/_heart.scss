@@ -1,0 +1,58 @@
+/*----------- Headind & heart --------------*/
+.heading {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    &__title {
+      margin:25px 0 20px 15px;
+      font-family: 'shrikhand';
+      font-weight: lighter;
+      font-size: 30px;
+      @media screen and (min-width:768px) {
+        margin:25px 50px 15px;
+        display:flex;
+        justify-content: center;
+      }  
+    }
+    &__heart {
+      width : 60px;
+      height: 84px;
+      position: relative;
+      @media screen and (min-width:768px) {
+        width: 100px;
+      }  
+      &--regular {
+        font-size: 25px;
+        right:45%;
+        top: 30px;
+        position: absolute;
+        @include solid-heart;  
+        @media screen and (min-width:768px) {
+          font-size: 30px;
+        } 
+      }
+      &--gradiant {
+        font-size: 25px;  
+        right:45%;
+        top:30px;
+        position: absolute;
+        @include gradient_heart;
+        @media screen and (min-width:768px) {
+          font-size: 30px;
+        }
+      }
+   &:hover &--regular {
+    opacity: 1;
+    transition: 2.5s ease-in; 
+    color: lighten($secondary-color, 25%);
+    }
+  &:hover &--gradiant {
+    opacity:1;
+    transform: scale(1.2);
+    transition: 2.5s ease-in; 
+    }
+    } 
+  } 

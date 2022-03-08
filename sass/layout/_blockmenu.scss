@@ -14,50 +14,7 @@
     }  
     @media screen and (min-width:992px) {
       margin:420px 0 0 0;
-    }        
-    &__title {
-      margin:25px 0 20px 15px;
-      font-family: shrikhand;
-      font-weight: lighter;
-      font-size: 30px;
-      @media screen and (min-width:768px) {
-        margin:25px 20px 15px;
-        display:flex;
-        justify-content: center;
-      }  
-    }  
-    /*heart*/
-    &::before {
-      @include icons(400,"\f004", 25px);
-      right:35px;
-      top: 33px;
-      @include solid_heart;
-        @media screen and (min-width:768px) {
-        right: 130px;
-        font-size: 30px;
-        top: 30px;
-      }
-    }   
-    &::after {
-      @include icons(900,"\f004", 25px);    
-      right:35px;
-      top:33px;
-      @include gradient_heart;
-        @media screen and (min-width:768px) {
-        right: 130px;
-        font-size: 30px;
-        top:30px;
-      }
-    }  
-    &:hover::before {
-      opacity: 0;
-      transition: 2.5s ease-in;
-    }
-    &:hover::after {
-      opacity:1;
-      transform: scale(1.2);    
-    }
-    /*heart*/
+    }          
     &__row {
       display: flex;
       flex-direction: column;
@@ -70,7 +27,8 @@
         flex-direction: row;
       }  
     }
-  }
+}  
+
   
    /*-contenainer meal*/
   .block-meal {
@@ -125,7 +83,6 @@
     overflow: hidden;
     animation: 2s ease-in-out appear;
     animation-fill-mode: both;
-    transform: scale(0);  
     &:visited {
       color: $primary-font;
     }    
