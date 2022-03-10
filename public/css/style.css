@@ -675,26 +675,6 @@ h2 h3 {
   margin: 0;
 }
 
-/*heart*/
-/*&::before {
-    @include icons(400,"\f004", 25px);
-    right:35px;
-    @include solid_heart;
-    }
-  &:hover::before{
-    color: lighten($secondary-color, 25%);
-  } 
-  &::after{
-    @include icons(900,"\f004", 25px);    
-    right:35px;
-    @include gradient_heart;
-  }  
-  &:hover::after{
-    opacity:1;
-    transform: scale(1.2);    
-  }  
-  /*heart
-}*/
 .card__text {
   flex-direction: column;
   justify-content: flex-start;
