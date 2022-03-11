@@ -1,7 +1,8 @@
    @keyframes appear {
     0% {
       visibility: hidden;
-      opacity: 0;  
+      opacity: 0; 
+      transform: translateY(60%); 
     }  
     50% {
       visibility:visible;
@@ -11,6 +12,7 @@
     100% {
       visibility:visible;
       opacity: 1;
+      transform: translateY(0); 
     }
   }
 
